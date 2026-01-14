@@ -2,8 +2,15 @@ import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-const Planet = ({ distance, size, color, speed }) => {
-  const planetRef = useRef();
+interface PlanetProps {
+  distance: number;
+  size: number;
+  color: string;
+  speed: number;
+}
+
+const Planet: React.FC<PlanetProps> = ({ distance, size, color, speed }) => {
+  const planetRef = useRef<THREE.Mesh>(null);
 
   useFrame(({ clock }) => {
     // Basic orbital mechanics: simple circular orbit

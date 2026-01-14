@@ -3,9 +3,17 @@ import { Canvas, useThree } from '@react-three/fiber';
 import { Stars, OrbitControls } from '@react-three/drei';
 import Planet from './Planet';
 
+interface PlanetData {
+  name: string;
+  distance: number;
+  size: number;
+  color: string;
+  speed: number;
+}
+
 // Planet data: distance from sun, size, color, speed
 // Distances and sizes are stylized, not realistic
-const planetsData = [
+const planetsData: PlanetData[] = [
   { name: 'Mercury', distance: 1.5, size: 0.1, color: '#A5A5A5', speed: 1.2 },
   { name: 'Venus', distance: 2.2, size: 0.15, color: '#E3BB76', speed: 0.9 },
   { name: 'Earth', distance: 3.2, size: 0.16, color: '#2271BB', speed: 0.7 },
@@ -16,7 +24,7 @@ const planetsData = [
   { name: 'Neptune', distance: 13.5, size: 0.34, color: '#4B70DD', speed: 0.08 },
 ];
 
-const ResponsiveCamera = () => {
+const ResponsiveCamera: React.FC = () => {
   const { camera, size } = useThree();
 
   useEffect(() => {
@@ -40,7 +48,7 @@ const ResponsiveCamera = () => {
   return null;
 };
 
-const Scene = () => {
+const Scene: React.FC = () => {
   return (
     <Canvas camera={{ position: [0, 15, 20], fov: 45 }}>
       <ResponsiveCamera />
