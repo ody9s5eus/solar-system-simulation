@@ -19,8 +19,8 @@ function App() {
         fontFamily: 'sans-serif',
         textShadow: '0 2px 4px rgba(0,0,0,0.8)'
       }}>
-        <h1 style={{ margin: 0, fontSize: '2rem', letterSpacing: '2px' }}>Solar System Simulation</h1>
-        <p style={{ margin: '5px 0 0', opacity: 0.8 }}>Low Poly • Stylized • 3D</p>
+        <h1 style={{ margin: 0, fontSize: '2rem', letterSpacing: '2px' }}>Solar System simulation</h1>
+        <p style={{ margin: '5px 0 0', opacity: 0.8 }}>author: ody9s5eus</p>
       </div>
     </div>
   );
